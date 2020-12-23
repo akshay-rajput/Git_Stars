@@ -1,15 +1,41 @@
 <template>
   <div class="hello">
-    <h3>{{ msg }}</h3>
-    
+    <h3>{{ msg }}</h3> <br>
+    <button class="" @click="fetchRepos">Get Repo</button>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  computed: {
+    getRepos(){
+      console.log("Getting Repos:");
+      const repos = this.fetchRepo();
+      return repos;
+    }
+  },
+  methods: {
+    fetchRepos(){
+      axios.get('https://api.github.com/repositories')
+      .then(response => {
+        // return response.JSON();
+        console.log('Convert to json', response.status);
+        return response.data;
+      })
+      .then(data => {
+        console.log(data);
+        const repo_name = data['name'];
+        const repo_owner = data['owner'].login;
+        // const repo_info = axios.get('')
+        
+        console.log("Repo: ", repo_name + ", -> ", repo_owner);
+      })
+    }
   }
 }
 </script>
