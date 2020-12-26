@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <navbar></navbar>
-    <home></home>
+  <div id="app" :class="darkTheme ? 'darktheme': ''">
+    <navbar @toggle_theme="changeTheme"></navbar>
+    <home class="main-content"></home>
     <site-footer></site-footer>
   </div>
 </template>
@@ -15,6 +15,17 @@ export default {
     Navbar,
     Home,
     SiteFooter
+  },
+  data(){
+    return{
+      darkTheme: false
+    }
+  },
+  methods: {
+    // Gets the checkbox information from the child component
+    changeTheme: function(params) {
+      this.darkTheme = params;
+    }
   }
 }
 </script>
@@ -24,21 +35,22 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.main-content{
+  flex-grow: 1;
 }
+
+// #nav {
+//   padding: 30px;
+
+//   a {
+//     font-weight: bold;
+//     color: #2c3e50;
+
+//     &.router-link-exact-active {
+//       color: #42b983;
+//     }
+//   }
+// }
 </style>
