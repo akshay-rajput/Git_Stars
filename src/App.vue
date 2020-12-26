@@ -1,15 +1,20 @@
 <template>
   <div id="app">
+    <navbar></navbar>
     <home></home>
+    <site-footer></site-footer>
   </div>
 </template>
 
 <script>
+import Navbar from '@/components/TheNavbar.vue'
 import Home from '@/views/Home.vue';
-  
+import SiteFooter from '@/components/TheFooter.vue'
 export default {
   components: {
-    Home
+    Navbar,
+    Home,
+    SiteFooter
   }
 }
 </script>
