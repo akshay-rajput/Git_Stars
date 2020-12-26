@@ -1,5 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
+
+// import styles
+import './assets/tailwind.css';
+import './assets/main.scss';
+
+// import advanced features
 import router from './router'
 import store from './store'
 
