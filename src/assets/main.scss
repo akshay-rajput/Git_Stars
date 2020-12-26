@@ -1,0 +1,38 @@
+@import 'variables';
+
+// add scss variables to css variables for theme toggle
+:root{
+    --page-background: #{ $light };
+    --nav-background: #{$dark};
+    --text-color: #{$dark};
+    --light: #{$light};
+    --white: #{$white};
+    --gray: #{$gray};
+}
+
+// darktheme
+.darktheme{
+    --page-background: #{ $dark };
+    --gray: #{$dark}; 
+    --nav-background: #{$gray};
+    --text-color: #{$dark};
+}
+
+// theme related styles
+#app{
+    background-color: var(--page-background);
+    color: var(--white);
+    nav{
+        background-color: var(--nav-background);
+        color: var(--gray);
+    }
+}
+
+// basic layouts
+#app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// buttons
