@@ -45,7 +45,7 @@
 }
 #app.lighttheme .repo-description::after{
     animation-name: fadeOutTextDelay;
-    animation-duration: 1s;
+    animation-duration: 2s;
     background: linear-gradient(0deg, rgba(243,239,239,1) 35%, rgba(243,239,239,0.25) 100%);    
 }
 #app.darktheme .repo-description::after{

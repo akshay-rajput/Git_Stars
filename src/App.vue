@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="darkTheme ? 'darktheme': ''">
+  <div id="app" :class="darkTheme ? 'darktheme': 'lighttheme'">
     <site-navbar @toggle_theme="changeTheme"></site-navbar>
     <home class="main-content"></home>
     <site-footer></site-footer>
