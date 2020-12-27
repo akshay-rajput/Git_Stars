@@ -2,12 +2,13 @@
 
 // add scss variables to css variables for theme toggle
 :root{
-    --page-background: #{ $light };
+    --page-background: #{ $white };
     --nav-background: #{$dark};
     --text-color: #{$dark};
     --light: #{$light};
     --white: #{$white};
     --gray: #{$gray};
+    --card-background: #{$light};
 }
 
 // darktheme
@@ -16,6 +17,7 @@
     --gray: #{$gray}; 
     --nav-background: #{$dark};
     --text-color: #{$gray};
+    --card-background: transparent;
 }
 
 // theme related styles
@@ -28,14 +30,28 @@
         color: var(--gray);
         transition: all ease-in 0.75s;
     }
+    .repo-card{
+        background: var(--card-background);
+    }
 
 }
-#app .repo-description::after{
-    background: linear-gradient(0deg, rgba(243,239,239,1) 35%, rgba(243,239,239,0.25) 100%);
+@keyframes fadeInTextDelay {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeOutTextDelay {
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+}
+#app.lighttheme .repo-description::after{
+    animation-name: fadeOutTextDelay;
+    animation-duration: 1s;
+    background: linear-gradient(0deg, rgba(243,239,239,1) 35%, rgba(243,239,239,0.25) 100%);    
 }
 #app.darktheme .repo-description::after{
     background: linear-gradient(0deg, rgba(68,68,68,1) 35%, rgba(68,68,68,0.25) 100%);
-    transition: all ease-in 0.75s;
+    animation-name: fadeInTextDelay;
+    animation-duration: 3s;
 }
 // basic layouts
 #app{
