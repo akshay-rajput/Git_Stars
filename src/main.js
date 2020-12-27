@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 // import styles
+import './assets/fontawesome5/css/all.min.css';
 import './assets/tailwind.css';
 import './assets/main.scss';
 
