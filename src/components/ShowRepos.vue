@@ -8,23 +8,23 @@
             <h4 class="text-lg font-semibold mb-1 truncate">My Repository Name goes here thes sdlkfjlsdflkjdf</h4>
           </a>
         </div>
-        <div class="border-t border-dashed border-gray-400 pt-2 repo-stats flex justify-between">
-          <div class="repo-forks text-sm">
-            <span class="">
+        <div class="repo-stats flex justify-between">
+          <div class="repo-forks flex text-sm">
+            <span class="mr-1">
               <octicon :icon="octicons.repoForked" className="github-icon" ></octicon>
             </span>
             {425351}
           </div>
           
-          <div class="repo-watchers text-sm">
-            <span class="">
+          <div class="repo-watchers mx-2 md:mx-3 flex text-sm">
+            <span class="mr-1">
               <octicon :icon="octicons.eye" className="github-icon" ></octicon>
             </span>
             {450012}
           </div>
           
-          <div class="repo-stars text-sm">
-            <span class="">
+          <div class="repo-stars flex text-sm">
+            <span class="mr-1">
               <octicon :icon="octicons.star" className="github-icon github-icon-hollow" ></octicon>
             </span>
             {412252}
@@ -244,7 +244,7 @@ export default {
     // border-color: green;
     height: 14px;
     width: 14px;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   .github-icon-hollow{
     fill: none;
@@ -260,6 +260,10 @@ export default {
   // show as cards
   .showRepo-cards .repo-card{
     width: 100%;
+    .repo-stats{
+      padding-top: 8px;
+      border-top: 1px dashed rgb(156, 163, 175);
+    }
 
     @media(min-width: 768px){
       width: 49%;
@@ -282,7 +286,23 @@ export default {
     width: 100%;
     // flex-grow: 1;
     // transition: all linear 1s;
+    .repo-description{
+      margin-top: 0px;
+      padding-top: 8px;
+      border-top: 1px dashed rgb(156, 163, 175);
+    }
+  }
 
+  .showRepo-list .repo-toprow{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+
+    .repo-stats{
+      margin-left: 10px;
+      margin-top: -4px;
+    }
   }
 
 </style>

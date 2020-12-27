@@ -4,10 +4,10 @@
       <h3 class="text-xl">Popular JS Repositories</h3>
       <div class="">
         <button class="btn-app border border-gray-50 px-3 py-1" @click="fetchRepos">Get Repo</button>
-        <button class="mx-3 md:mx-4 px-1 btn-display-cards" :class="showAsList ? '':'btn-toggled'" @click="showAsList=false">
+        <button class="hidden sm:inline mx-3 md:mx-4 px-1 btn-display-cards" :class="showAsList ? '':'btn-toggled'" @click="showAsList=false">
           <span class="fa fa-border-all text-xl"></span>
         </button>
-        <button class="px-1 btn-display-list" :class="showAsList ? 'btn-toggled':''" @click="showAsList=true">
+        <button class="hidden sm:inline px-1 btn-display-list" :class="showAsList ? 'btn-toggled':''" @click="showAsList=true">
           <span class="fa fa-list text-xl"></span>
         </button>
       </div>
