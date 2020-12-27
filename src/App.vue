@@ -1,18 +1,19 @@
 <template>
   <div id="app" :class="darkTheme ? 'darktheme': ''">
-    <navbar @toggle_theme="changeTheme"></navbar>
+    <site-navbar @toggle_theme="changeTheme"></site-navbar>
     <home class="main-content"></home>
     <site-footer></site-footer>
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/TheNavbar.vue'
+import SiteNavbar from '@/components/TheNavbar.vue'
 import Home from '@/views/Home.vue';
 import SiteFooter from '@/components/TheFooter.vue'
+
 export default {
   components: {
-    Navbar,
+    SiteNavbar,
     Home,
     SiteFooter
   },
