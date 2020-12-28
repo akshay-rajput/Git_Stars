@@ -20,21 +20,23 @@
               <octicon :icon="octicons.code" className="github-icon mt2" ></octicon>
             </span>
             <span v-if="repository.language" class="">{{repository.language}}</span>
-            <span v-if="!repository.language" class="">Multiple</span>
+            <span v-if="!repository.language" class="">N/A</span>
           </div>
 
-          <div class="repo-forks mx-2 md:mx-3 flex text-sm cursor-default" title="Forks">
-            <span class="mr-1">
-              <octicon :icon="octicons.repoForked" className="github-icon mt2" ></octicon>
-            </span>
-            {{repository.forks_count}}
-          </div>
-          
-          <div class="repo-stars flex text-sm cursor-default" title="Stargazers">
-            <span class="mr-1">
-              <octicon :icon="octicons.star" className="github-icon github-icon-hollow mt2" ></octicon>
-            </span>
-            {{repository.stargazers_count}}
+          <div class="repo-numbers flex ml-3">
+            <div class="repo-forks mr-3 flex text-sm cursor-default" title="Forks">
+              <span class="mr-1">
+                <octicon :icon="octicons.repoForked" className="github-icon mt2" ></octicon>
+              </span>
+              {{repository.forks_count}}
+            </div>
+            
+            <div class="repo-stars flex text-sm cursor-default" title="Stargazers">
+              <span class="mr-1">
+                <octicon :icon="octicons.star" className="github-icon github-icon-hollow mt2" ></octicon>
+              </span>
+              {{repository.stargazers_count}}
+            </div>
           </div>
         </div>
       </div>
