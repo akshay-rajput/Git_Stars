@@ -40,7 +40,7 @@ export default {
       showAsList: false,
       // showAsCard: true,
       fetchedRepoList: [],
-      repoListHeight: '750px',
+      repoListHeight: '760px',
       showLess: true,
       showMore: false
     }
@@ -89,7 +89,7 @@ export default {
       console.log("showing less");
       this.showLess = true;
       this.showMore = false;
-      this.repoListHeight = '750px';
+      this.repoListHeight = '760px';
     }
   }
 }
@@ -113,10 +113,8 @@ export default {
     position: relative;
   }
   .repo-list-limited{
-    // height: auto;
-    // max-height: 750px;
-    transition: max-height ease-in 1s;
-    margin-bottom: 10px;
+    transition: max-height ease-in-out 1s;
+    margin-bottom: 20px;
   }
 
   #app.lighttheme .repoList-displayOptions::before{
@@ -133,7 +131,7 @@ export default {
     content: '';
     width: 100%;
     left: 0;
-    height: 2rem;
+    height: 4rem;
     position: absolute;
     bottom: 40px;
     // transition: background ease 0.75s;
