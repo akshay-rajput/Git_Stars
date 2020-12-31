@@ -1,14 +1,14 @@
 <template>
   <div class="frontend-topics py-2 mb-3">
-    <swiper :options="swiperOptions" 
+    <swiper :options="swiperOptions"
                 @swiper="onSwiper" :scrollbar="{ draggable: true }"
                 >
       <swiper-slide class="topic-card my-4" v-for="topic in jsTopics" :key="topic.name">
-        <svg role="img" viewBox="0 0 24 24" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
+        <svg @click="select_topic(topic)" class="cursor-pointer" role="img" viewBox="0 0 24 24" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
           <path :fill=topic.color :d=topic.icon />
         </svg>
         <!-- <span :class="topic.icon"></span> -->
-        <h5 class="">{{topic.name}} </h5>
+        <h5 class="cursor-pointer" @click="select_topic(topic)">{{topic.name}}</h5>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -43,6 +43,7 @@ export default {
   },
   data() {
     return {
+      selected_topic: "Javascript",
       swiperOptions: {
         // Enable lazy loading
         lazy: true,
@@ -77,7 +78,7 @@ export default {
         mousewheel: true,
         
         // Some Swiper option/callback...
-      }
+      },
     }
   },
   methods: {
@@ -85,6 +86,15 @@ export default {
     onSwiper(swiper) {
       console.log("swiper load: ",swiper)
     },
+    select_topic(topic){
+      this.selected_topic = topic.name;
+      console.log("Select: ", this.selected_topic);
+    }
+  },
+  watch: {
+    selected_topic : function(){
+      this.$emit('change_topic', this.selected_topic);
+    }
   },
   directives: {
     swiper: directive
