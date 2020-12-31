@@ -1,13 +1,29 @@
 <template>
   <div class="topic-repos">
-    <h1>This is Topic page</h1>
-    <h2 class="">Topic is {{ $route.params.topicname }}</h2>
+    <h2 class="">Popular <span class="">{{ fetch_topic }}</span> Repos</h2>
+    <div class="">
+
+    </div>
+    <div class="">
+      <show-repos :repoList=fetchedRepoList :repoListDisplay="showAsList" />
+    </div>
   </div>
 </template>
 
 <script>
+import ShowRepos from '@/components/ShowRepos.vue';
+
 export default {
-    
+  components: {
+    ShowRepos,
+  },
+  data(){
+    return{
+      fetch_topic: this.$route.params.topicname,
+      fetchedRepoList: [],
+      showAsList: false
+    }
+  }
 }
 </script>
 
