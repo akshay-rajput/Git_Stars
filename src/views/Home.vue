@@ -40,7 +40,6 @@
 
 <script>
 // @ is an alias to /src
-import axios from "axios";
 import ShowRepos from '@/components/ShowRepos.vue';
 import ShowMainTopics from '@/components/ShowMainTopics.vue';
 import ShowOtherTopics from '@/components/ShowOtherTopics.vue';
@@ -98,49 +97,26 @@ export default {
       ],
       showAsList: false,
       fe_topic: 'Javascript',
-      fetchedRepoList: [],
+      // fetchedRepoList: [],
       repoListHeight: '760px',
       showLess: true,
       showMore: false
     }
   },
   mounted() {
-    this.fetchRepos();
+    this.$store.dispatch('action_fetchRepos', this.fe_topic);
+    // this.fetchedRepoList;
+  },
+  computed: {
+    fetchedRepoList(){
+      return this.$store.getters.getter_fetchedRepos;
+    }
   },
   methods: {
     fetch_fe_repos(topicname){
       this.fe_topic = topicname;
     },
-    fetchRepos() {
-      // https://api.github.com/search/repositories?q=
-      // const queryString = 'q=' + encodeURIComponent('GitHub Octocat in:readme user:defunkt');
-      // const queryString = 'q=stars:>=50000'
-      // const querystring = 'q=topic:ruby+topic:rails'
-      // const queryString = 'q=sort=forks&direction=desc'
-      const queryString = 'q=topic:'+ this.fe_topic +'&sort=stars'
-      // const queryString = 'q=javascript+is:featured&sort=stars'
-      axios
-        .get("https://api.github.com/search/repositories?"+queryString,{ 
-              headers: {
-                  'Accept' : 'application/vnd.github.v3+json'
-              }})
-        .then((response) => {
-          console.log("Status: ", response.status);
-
-          // check rate limit
-          axios.get("https://api.github.com/rate_limit").then((response) => {
-            console.log("ratelimit: ", response.data.resources.search);
-          });
-
-          return response.data;
-        })
-        .then((repolist) => {
-          console.log("repoList: ", repolist.items);
-          this.fetchedRepoList = repolist.items;
-          
-          // console.log("type of repolist: ", repolist);
-        });
-    },
+    
     showMoreRepos(){
       console.log("showing more");
       this.showMore = true;
@@ -156,7 +132,8 @@ export default {
   },
   watch: {
     fe_topic: function(){
-      this.fetchRepos();
+      // this.fetchRepos();
+      this.$store.dispatch('action_fetchRepos', this.fe_topic);
     }
   }
 }
