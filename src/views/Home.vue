@@ -20,6 +20,7 @@
       </div>
     </div>
     
+    <!-- repo list -->
     <div class="repo-list-parent">
       <div class="repo-list-limited overflow-hidden" :style="{ maxHeight: repoListHeight }">
         <show-repos :repoList=fetchedRepoList :repoListDisplay="showAsList" />
@@ -29,6 +30,11 @@
         <button class="btn-showmore" v-if="showMore" @click="showLessRepos" >Show less</button>
       </div>
     </div>
+
+    <!-- other topics -->
+    <div class="other-topics my-3 py-3 md:my-6" id="other-topics-section">
+      <show-other-topics></show-other-topics>
+    </div>
   </div>
 </template>
 
@@ -37,13 +43,14 @@
 import axios from "axios";
 import ShowRepos from '@/components/ShowRepos.vue';
 import ShowMainTopics from '@/components/ShowMainTopics.vue';
-
+import ShowOtherTopics from '@/components/ShowOtherTopics.vue';
 
 export default {
   name: 'Home',
   components: {
     ShowMainTopics,
     ShowRepos,
+    ShowOtherTopics
   },
   data(){
     return{
