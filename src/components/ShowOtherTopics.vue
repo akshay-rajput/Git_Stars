@@ -4,9 +4,9 @@
       <div class="other-topic-list mb-2" v-for="(topiclist, category) in otherTopics" :key="category">
           <h5 class="mb-1 text-lg">{{category}}</h5>
           <div class="py-1 flex items-center flex-wrap">
-              <a class="text-sm topic-tag" v-for="topic in topiclist" :key="topic">
+              <router-link :to="{ name: 'Topic', params: { topicname: topic }}" class="text-sm topic-tag" v-for="topic in topiclist" :key="topic">
                   {{topic}}
-              </a>
+              </router-link>
           </div>
       </div>
   </div>
