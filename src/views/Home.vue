@@ -5,7 +5,6 @@
       <show-main-topics @change_topic="fetch_fe_repos" :jsTopics="jsTopics"></show-main-topics>
     </div>
 
-
     <!-- Repolist heading -->
     <div class="flex justify-between items-center">
       <h3 class="text-xl">Popular JS Repositories</h3>
@@ -104,6 +103,7 @@ export default {
     }
   },
   mounted() {
+    // fetch on mounted for pageload.
     this.$store.dispatch('action_fetchRepos', this.fe_topic);
     // this.fetchedRepoList;
   },
@@ -113,6 +113,7 @@ export default {
     }
   },
   methods: {
+    // set topic name
     fetch_fe_repos(topicname){
       this.fe_topic = topicname;
     },
@@ -140,14 +141,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .btn-toggled{
-    border-radius: 4px;
-    background: rgba($color: #000000, $alpha: .35);
-    color: #aaa;
-    &:focus{
-      outline-color: teal;
-    }
-  }
+  
   .btn-showmore{
     padding: 6px 12px;
     border: 1px solid #ccc;
