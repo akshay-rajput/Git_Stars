@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from "axios";
 
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -18,12 +17,12 @@ export default new Vuex.Store({
   },
   actions: {
     action_fetchRepos({commit}, fe_topic) {
-      // https://api.github.com/search/repositories?q=
       // const queryString = 'q=' + encodeURIComponent('GitHub Octocat in:readme user:defunkt');
-      // const queryString = 'q=stars:>=50000'
       // const querystring = 'q=topic:ruby+topic:rails'
       // const queryString = 'q=sort=forks&direction=desc'
-      const queryString = 'q=topic:'+ fe_topic +'&sort=stars'
+      console.log("Action Topic: ", fe_topic);
+      const queryString = 'q='+fe_topic+'&sort=stars'
+      // old query --> 'q='+fe_topic+'+topic:'+ fe_topic +'&sort=stars'
       // const queryString = 'q=javascript+is:featured&sort=stars'
       axios
         .get("https://api.github.com/search/repositories?"+queryString,{ 
