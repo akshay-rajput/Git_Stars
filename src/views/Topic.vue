@@ -36,6 +36,10 @@ export default {
     }
   },
   mounted() {
+    // scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // fetch repositories
     this.$store.dispatch('action_fetchRepos', this.fetch_topic);
     // this.fetchedRepoList;
   },
