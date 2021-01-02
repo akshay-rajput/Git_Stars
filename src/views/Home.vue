@@ -6,8 +6,11 @@
     </div>
 
     <!-- Repolist heading -->
-    <div class="flex justify-between items-center">
-      <h3 class="text-xl">Popular JS Repositories</h3>
+    <div class="repolist-heading flex justify-between items-center mt-4 mb-2">
+      <div class="">
+        <h3 class="text-xl mb-1">{{fe_topic}} Repositories</h3>
+        <h5 class="text-xs text-gray-400">Showing popular repositories based on star count.</h5>
+      </div>
       <div class="">
         <!-- <button class="btn-app border border-gray-50 px-3 py-1" @click="fetchRepos">Get Repo</button> -->
         <button class="hidden sm:inline mx-3 md:mx-4 px-1 btn-display-cards" :class="showAsList ? '':'btn-toggled'" @click="showAsList=false">
@@ -24,7 +27,7 @@
       <div class="repo-list-limited overflow-hidden" :style="{ maxHeight: repoListHeight }">
         <show-repos :repoList=fetchedRepoList :repoListDisplay="showAsList" />
       </div>
-      <div class="text-center repoList-displayOptions">
+      <div class="text-center repoList-displayOptions" :class="showMore? 'removeFadeEffect': ''">
         <button class="btn-showmore" v-if="showLess" @click="showMoreRepos" >Show more</button>
         <button class="btn-showmore" v-if="showMore" @click="showLessRepos" >Show less</button>
       </div>
@@ -161,7 +164,7 @@ export default {
     background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(255,255,255,0.25) 100%);    
   }
   #app.darktheme .repoList-displayOptions::before{
-      background: linear-gradient(0deg, rgba(68,68,68,1) 35%, rgba(68,68,68,0.25) 100%);
+      background: linear-gradient(0deg, rgba(60, 42, 58, 1) 35%, rgba(60, 42, 58, 0.25) 100%);
       animation-name: fadeInTextDelay;
       animation-duration: 3s;
   }
@@ -173,5 +176,9 @@ export default {
     position: absolute;
     bottom: 40px;
     // transition: background ease 0.75s;
+  }
+  .removeFadeEffect.repoList-displayOptions::before{
+    height: 0;
+    width: 0;
   }
 </style>
