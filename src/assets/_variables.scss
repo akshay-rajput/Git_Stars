@@ -1,5 +1,16 @@
-$dark : #222;
-$darkgray: #444;
-$white : white;
-$light : #f3efef;
-$gray : #ccc;
+/* SCSS HEX */
+$white: #ffffffff;
+$light: #fdedf9ff;
+$theme: #d63af9ff;
+$gray: #e0e0e0ff;
+$dark: #3c2a3aff;
+$darkcard: rgb(51, 35, 49);
+$black: #210814ff;
+
+/* SCSS HSL */
+// $white: hsla(0, 0%, 100%, 1);
+// $light: hsla(315, 80%, 96%, 1);
+// $theme: hsla(289, 94%, 60%, 1);
+// $gray: hsla(0, 0%, 88%, 1);
+// $dark: hsla(307, 18%, 20%, 1);
+// $black: hsla(331, 61%, 8%, 1);

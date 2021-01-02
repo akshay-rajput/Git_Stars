@@ -4,34 +4,51 @@
 :root{
     --page-background: #{ $white };
     --nav-background: #{$dark};
-    --text-color: #{$dark};
-    --light: #{$light};
-    --white: #{$white};
-    --gray: #{$gray};
+    --footer-background: #{$dark};
     --card-background: #{$light};
+    --text-color: #{$dark};
+    --gray:#{$gray};
+    --link-color: #{$theme};
+    --button-color: #{$theme};
 }
 
 // darktheme
 .darktheme{
-    --page-background: #{ $darkgray };
-    --gray: #{$gray}; 
-    --nav-background: #{$dark};
-    --text-color: #{$gray};
-    --card-background: transparent;
+    --page-background: #{ $dark };
+    --nav-background: #{$black};
+    --footer-background: #{$black};
+    --card-background: #{$darkcard};
+    --text-color: #{$light};
+    --gray:#{$gray};
+    --link-color: #{$theme};
+    --button-color: #{$theme};
 }
 
 // theme related styles
 #app{
+    // color: rgba(255,255,255,0.65);
+    // background-color: #24292e;
+    background-image: url(https://desktop.github.com/images/star-bg.svg);
+    // background-repeat: repeat-x;
+    // background-position: center 0, 0 0, 0 0;
+    // background-color: #2b2b2d;
     background-color: var(--page-background);
     color: var(--text-color);
     transition: all ease-in 0.75s;
-    nav{
+    nav, footer{
         background-color: var(--nav-background);
         color: var(--gray);
         transition: all ease-in 0.75s;
     }
     .repo-card{
         background: var(--card-background);
+    }
+    .topic-card{
+        background: var(--page-background);
+    }
+    .topic-tag{
+        background: var(--card-background);
+        color: var(--link-color);
     }
 
 }
@@ -46,10 +63,10 @@
 #app.lighttheme .repo-description::after{
     animation-name: fadeOutTextDelay;
     animation-duration: 2s;
-    background: linear-gradient(0deg, rgba(243,239,239,1) 35%, rgba(243,239,239,0.25) 100%);    
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(255,255,255,0.25) 100%);    
 }
 #app.darktheme .repo-description::after{
-    background: linear-gradient(0deg, rgba(68,68,68,1) 35%, rgba(68,68,68,0.25) 100%);
+    background: linear-gradient(0deg, rgba(51, 35, 49, 1) 35%, rgba(51, 35, 49, 0.25) 100%);
     animation-name: fadeInTextDelay;
     animation-duration: 3s;
 }
@@ -79,4 +96,17 @@
     bottom: 1px;
     // transition: background ease 0.75s;
 }
+
 // buttons
+.github-icon-hollow{
+    fill: none !important;
+    stroke: currentColor;
+}
+.btn-toggled{
+    border-radius: 4px;
+    background: rgba($color: #000000, $alpha: .35);
+    color: #aaa;
+    &:focus{
+        outline-color: teal;
+    }
+}
