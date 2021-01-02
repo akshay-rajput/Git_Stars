@@ -61,20 +61,19 @@ export default {
           768: {
             slidesPerView: 6,
             spaceBetween: 30,
-            
+            grabCursor: true,
           },
           360: {
             slidesPerView: 4,
             spaceBetween: 10,
-            
+            grabCursor: true,
           },
           300: {
             slidesPerView: 3,
             spaceBetween: 10,
-            
+            grabCursor: true,
           }
         },
-        grabCursor: true,
         mousewheel: true,
         
         // Some Swiper option/callback...
@@ -106,7 +105,6 @@ export default {
   .topic-card{
     overflow: hidden;
     text-align: center;
-    border: 1px solid #eee;
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;

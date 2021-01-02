@@ -132,20 +132,6 @@ export default {
   }
 };
 
-// repolist.items.forEach((repo) => {
-            
-//   const repo_name = repo["name"];
-//   const repo_owner = repo["owner"]["login"];
-//   const repo_stars = repo['stargazers_count'];
-
-//   if (repo_name == "thefuck") {
-//     console.log("Name: " + repo_name);
-//     console.log("Owner: " + repo_owner);
-//     console.log("Stars: " + repo_stars);
-    
-//     // console.log("\n FULL REPO: \n" + JSON.stringify(repo));
-//   }
-// });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -158,12 +144,7 @@ export default {
       margin-top: 1px;
     }
   }
-  .github-icon-hollow{
-    fill: none;
-    stroke: currentColor;
-    // stroke-width: initial;
-    // stroke: #333;
-  }
+  
 
   .repo-card{
     // flex-grow: 1;

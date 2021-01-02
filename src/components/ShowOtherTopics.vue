@@ -1,6 +1,6 @@
 <template>
   <div class="other-topics-tags">
-      <h4 class="text-2xl text-gray-400 mb-2">Other topics</h4>
+      <h4 class="text-2xl text-gray-400 my-4">Other topics</h4>
       <div class="grid sm:grid-cols-3 my-2">
         <div class="other-topic-list mb-2" v-for="(topiclist, category) in otherTopics" :key="category">
             <h5 class="mb-1 text-sm text-gray-400">{{category}}</h5>
@@ -70,8 +70,6 @@ export default {
             padding-right: 15px;
             margin-left: 15px;
             margin-right: 15px;
-            border-left: 1px dashed #aaa;
-            border-right: 1px dashed #aaa;
         }
     }
 
