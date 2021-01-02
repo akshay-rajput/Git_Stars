@@ -39,6 +39,7 @@ export default {
 }
 
 .main-content{
+  margin-top: 2rem;
   flex-grow: 1;
 }
 
