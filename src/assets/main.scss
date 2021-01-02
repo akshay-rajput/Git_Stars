@@ -45,10 +45,18 @@
     }
     .topic-card{
         background: var(--page-background);
+        border: 1px solid var(--gray);
     }
     .topic-tag{
         background: var(--card-background);
         color: var(--link-color);
+
+        &:hover{
+            color: var(--text-color);
+        }
+    }
+    .swiper-pagination-progressbar-fill{
+        background-color: var(--link-color);
     }
 
 }
