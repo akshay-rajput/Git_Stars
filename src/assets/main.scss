@@ -20,7 +20,7 @@
     --card-background: #{$darkcard};
     --text-color: #{$light};
     --gray:#{$gray};
-    --link-color: #{$theme};
+    --link-color: #{$accent};
     --button-color: #{$theme};
 }
 
@@ -40,12 +40,33 @@
         color: var(--gray);
         transition: all ease-in 0.75s;
     }
+    a{
+        color: var(--link-color);
+        &:hover{
+            color: var(--accent);
+        }
+    }
+    .repolist-heading{
+        background-color: var(--page-background);
+        transition: all ease-in 0.75s;
+    }
+    .btn-app{
+        background: var(--button-color);
+        border-radius: 5px;
+        color: var(--text-color);
+        transition: all ease 0.35s;
+        &:hover{
+            background: var(--link-color);
+        }
+    }
     .repo-card{
         background: var(--card-background);
+        transition: all ease-in 0.75s;
     }
     .topic-card{
         background: var(--page-background);
         border: 1px solid var(--gray);
+        transition: all ease-in 0.75s;
     }
     .topic-tag{
         background: var(--card-background);
@@ -71,7 +92,7 @@
 #app.lighttheme .repo-description::after{
     animation-name: fadeOutTextDelay;
     animation-duration: 2s;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(255,255,255,0.25) 100%);    
+    background: linear-gradient(0deg, rgba(253,237,249,1) 35%, rgba(253,237,249,0.25) 100%);    
 }
 #app.darktheme .repo-description::after{
     background: linear-gradient(0deg, rgba(51, 35, 49, 1) 35%, rgba(51, 35, 49, 0.25) 100%);
@@ -79,6 +100,11 @@
     animation-duration: 3s;
 }
 // basic layouts
+html{
+    @media(max-width: 440px){
+        font-size: 14px;
+    }
+}
 #app{
     display: flex;
     flex-direction: column;
