@@ -5,10 +5,10 @@
                 <span class="fab fa-github-alt"></span> TopRepos
             </router-link>
             <div class="">
-                <a href="https://github.com/Root-0/Git_Stars" target="_blank" rel="noopener" class="mr-3 md:mr-4" title="Github Repository">
+                <a href="https://github.com/Root-0/Git_Stars" target="_blank" rel="noopener" class="mr-3 md:mr-4 hint--bottom" aria-label="Github Repository">
                     <span class="fa fa-code-branch"></span> Fork
                 </a>
-                <a href="javascript:void(0);" @click="darkmode=!darkmode" title="toggle theme">
+                <a href="javascript:void(0);" @click="darkmode=!darkmode" class="hint--bottom" aria-label="Change Theme" title="toggle theme">
                     <span :class="!darkmode ? 'fa fa-sun': 'fa fa-moon'"></span>
                 </a>
             </div>

@@ -5,29 +5,31 @@
                 <small class="text-xs text-gray-500">Reach out</small>
                 <ul class="flex items-baseline justify-center">
                     <li class="">
-                        <a href="https://github.com/root-0" class="footer-link" target="_blank" rel="noopener" title="My Github Profile">
+                        <a href="https://github.com/root-0" class="footer-link hint--top" target="_blank" rel="noopener" aria-label="My Github Profile">
                             <span class="fab fa-github"></span>
                         </a>
                     </li>
                     <li class="mx-6">
-                        <a href="https://www.linkedin.com/in/akshay-rajput/" target="_blank" rel="noopener" class="footer-link" title="My LinkedIn Profile">
+                        <a href="https://www.linkedin.com/in/akshay-rajput/" target="_blank" rel="noopener" class="footer-link hint--top" aria-label="My LinkedIn Profile">
                             <span class="fab fa-linkedin"></span>
                         </a>
                     </li>
                     <li class="mr-6">
-                        <a href="https://www.instagram.com/the.frontend.guy/" target="_blank" rel="noopener" class="footer-link" title="My Instagram">
+                        <a href="https://www.instagram.com/the.frontend.guy/" target="_blank" rel="noopener" class="footer-link hint--top" aria-label="Instagram page">
                             <span class="fab fa-instagram"></span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="https://akshayr.netlify.app" target="_blank" rel="noopener" class="footer-link" title="My Website">
+                        <a href="https://akshayr.netlify.app" target="_blank" rel="noopener" class="footer-link hint--top" aria-label="My Website">
                             <span class="fa fa-user-ninja"></span>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="w-full text-center py-1">
-                <small class="text-xs text-gray-500">If you like what you see, it would help if you marked it star or fork it on github.</small>
+                <small class="text-xs text-gray-500">
+                    If you like what you see, it would help if you marked it star or fork it on <a href="https://github.com/Root-0/Git_Stars" rel="noopener" target="_blank" class="hint--top" aria-label="Github Repo">github</a>.
+                </small>
             </div>
 
         </div>
