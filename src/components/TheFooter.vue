@@ -5,22 +5,22 @@
                 <small class="text-xs text-gray-500">Reach out</small>
                 <ul class="flex items-baseline justify-center">
                     <li class="">
-                        <a href="https://github.com/root-0" class="footer-link" title="My Github Profile">
+                        <a href="https://github.com/root-0" class="footer-link" target="_blank" rel="noopener" title="My Github Profile">
                             <span class="fab fa-github"></span>
                         </a>
                     </li>
                     <li class="mx-6">
-                        <a href="https://www.linkedin.com/in/akshay-rajput/" class="footer-link" title="My LinkedIn Profile">
+                        <a href="https://www.linkedin.com/in/akshay-rajput/" target="_blank" rel="noopener" class="footer-link" title="My LinkedIn Profile">
                             <span class="fab fa-linkedin"></span>
                         </a>
                     </li>
                     <li class="mr-6">
-                        <a href="https://www.instagram.com/the.frontend.guy/" class="footer-link" title="My Instagram">
+                        <a href="https://www.instagram.com/the.frontend.guy/" target="_blank" rel="noopener" class="footer-link" title="My Instagram">
                             <span class="fab fa-instagram"></span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="https://akshayr.netlify.app" class="footer-link" title="My Website">
+                        <a href="https://akshayr.netlify.app" target="_blank" rel="noopener" class="footer-link" title="My Website">
                             <span class="fa fa-user-ninja"></span>
                         </a>
                     </li>
