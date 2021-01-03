@@ -2,6 +2,7 @@
   <div id="app" :class="darkTheme ? 'darktheme': 'lighttheme'">
     <site-navbar @toggle_theme="changeTheme"></site-navbar>
     <router-view class="main-content"></router-view>
+    <back-to-top></back-to-top>
     <site-footer></site-footer>
   </div>
 </template>
@@ -9,12 +10,14 @@
 <script>
 import SiteNavbar from '@/components/TheNavbar.vue'
 // import Home from '@/views/Home.vue';
+import BackToTop from '@/components/BackToTop.vue'
 import SiteFooter from '@/components/TheFooter.vue'
 
 export default {
   components: {
     SiteNavbar,
     // Home,
+    BackToTop,
     SiteFooter
   },
   data(){
