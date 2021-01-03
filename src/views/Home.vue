@@ -1,15 +1,15 @@
 <template>
   <div class="home container mx-auto px-4 py-6 md:py-12">
-    <div class="frontend-topics">
-      <h3 class="">Frontend Topics</h3>
+    <div class="frontend-topics ">
+      <h3 class="text-xl">Frontend Topics</h3>
       <show-main-topics @change_topic="fetch_fe_repos" :jsTopics="jsTopics"></show-main-topics>
     </div>
 
     <!-- Repolist heading -->
-    <div class="repolist-heading flex justify-between items-center mt-4 mb-2">
+    <div class="repolist-heading flex justify-between items-center mt-6 mb-2">
       <div class="">
-        <h3 class="text-xl mb-1">{{fe_topic}} Repositories</h3>
-        <h5 class="text-xs text-gray-400">Showing popular repositories based on star count.</h5>
+        <h3 class="text-xl mb-1"> <span class="highlight-topic-name mb-4">{{ fe_topic }}</span> Repositories</h3>
+        <h5 class="text-xs text-gray-400">Showing popular repositories (max: 30) based on star count.</h5>
       </div>
       <div class="">
         <!-- <button class="btn-app border border-gray-50 px-3 py-1" @click="fetchRepos">Get Repo</button> -->
@@ -25,6 +25,10 @@
     <!-- repo list -->
     <div class="repo-list-parent">
       <div class="repo-list-limited overflow-hidden" :style="{ maxHeight: repoListHeight }">
+        <div :class="loadingRepos ? 'loadingRepos':''" class="loading-icon" v-if="loadingRepos">
+          <span class="fa fa-spinner fa-spin"></span>
+          <p class="text-sm text-blue-400 my-4">Please wait</p>
+        </div>
         <show-repos :repoList=fetchedRepoList :repoListDisplay="showAsList" />
       </div>
       <div class="text-center repoList-displayOptions" :class="showMore? 'removeFadeEffect': ''">
@@ -100,7 +104,7 @@ export default {
       showAsList: false,
       fe_topic: 'Javascript',
       // fetchedRepoList: [],
-      repoListHeight: '760px',
+      repoListHeight: '780px',
       showLess: true,
       showMore: false
     }
@@ -113,6 +117,9 @@ export default {
   computed: {
     fetchedRepoList(){
       return this.$store.getters.getter_fetchedRepos;
+    },
+    loadingRepos(){
+      return this.$store.getters.getter_loadingRepos;
     }
   },
   methods: {
@@ -125,13 +132,13 @@ export default {
       console.log("showing more");
       this.showMore = true;
       this.showLess = false;
-      this.repoListHeight = '5000px';
+      this.repoListHeight = '5500px';
     },
     showLessRepos(){
       console.log("showing less");
       this.showLess = true;
       this.showMore = false;
-      this.repoListHeight = '760px';
+      this.repoListHeight = '780px';
     }
   },
   watch: {
