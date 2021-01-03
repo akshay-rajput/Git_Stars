@@ -12,6 +12,7 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "hint.css": "^2.6.0",
     "octicons-vue": "^1.0.6",
     "postcss": "^7.0.35",
     "swiper": "^6.4.5",
