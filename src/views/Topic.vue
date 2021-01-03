@@ -1,8 +1,16 @@
 <template>
-  <div class="container mx-auto px-4 py-3 md:py-6 topic-repos">
+  <div class="container mx-auto px-4 py-3 md:py-6 md:mb-8 topic-repos">
+    <div class="mb-8 mt-4 text-sm">
+      <router-link to="/" class="text-gray-400">
+        <span class="mr-1 fa fa-angle-double-left"></span> Back
+      </router-link>
+    </div>
     <!-- Repolist heading -->
-    <div class="flex justify-between items-center">
-      <h2 class="text-xl">Popular <span class="">{{ fetch_topic }}</span> Repositories</h2>
+    <div class="repolist-heading mb-4 flex justify-between items-center">
+      <div class="">
+        <h2 class="text-xl"><span class="highlight-topic-name mb-4">{{ fetch_topic }}</span> Repositories</h2>
+        <h5 class="text-xs text-gray-400 pt-2">Showing popular repositories (max: 30) based on star count.</h5>
+      </div>
       <div class="">
         <!-- <button class="btn-app border border-gray-50 px-3 py-1" @click="fetchRepos">Get Repo</button> -->
         <button class="hidden sm:inline mx-3 md:mx-4 px-1 btn-display-cards" :class="showAsList ? '':'btn-toggled'" @click="showAsList=false">
@@ -15,7 +23,11 @@
     </div>
 
     <!-- render list of repositories -->
-    <div class="">
+    <div class="relative overflow-hidden">
+      <div :class="loadingRepos ? 'loadingRepos':''" class="loading-icon" v-if="loadingRepos">
+        <span class="fa fa-spinner fa-spin"></span>
+        <p class="text-sm text-blue-400 my-4">Please wait</p>
+      </div>
       <show-repos :repoList=fetchedRepoList :repoListDisplay="showAsList" />
     </div>
   </div>
@@ -46,6 +58,9 @@ export default {
   computed: {
     fetchedRepoList(){
       return this.$store.getters.getter_fetchedRepos;
+    },
+    loadingRepos(){
+      return this.$store.getters.getter_loadingRepos;
     }
   },
 }
