@@ -1,6 +1,6 @@
 <template>
   <div class="other-topics-tags">
-      <h4 class="text-2xl text-gray-400 my-4">Other topics</h4>
+      <h4 class="text-2xl text-gray-400 my-4">More topics</h4>
       <div class="grid sm:grid-cols-3 my-2">
         <div class="other-topic-list mb-2" v-for="(topiclist, category) in otherTopics" :key="category">
             <h5 class="mb-1 text-sm text-gray-400">{{category}}</h5>
@@ -21,11 +21,12 @@ export default {
         return{
             otherTopics: {
                 "Frontend": [
-                    'Angular', 
-                    'Hacktoberfest', 
-                    'API',  
-                    'SASS', 
-                    'Build tools',
+                    'Angular',
+                    'UI-kit',
+                    'API',
+                    'SASS',
+                    'Styleguide',
+                    'Design-systems',
                     'Animations',
                 ],
                 "UI Components": [
@@ -42,9 +43,11 @@ export default {
                 "Meta": [
                     'Interview',
                     'Data Structures',
-                    'UI design',
+                    'Algorithms',
                     'Awesome Lists',
-                    'Accessibility'
+                    'Accessibility',
+                    'Resources',
+                    'Hacktoberfest'
                 ],
                 
             }
