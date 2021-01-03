@@ -1,7 +1,7 @@
 <template>
   <div class="container repoList-container flex items-baseline flex-wrap mx-auto py-4" :class="repoListDisplay ? 'showRepo-list': ' showRepo-cards'">
     <!-- Passed Prop items: {{repoLength}} -->
-    <div class="repo-card p-2 mb-4 border" v-for="repository in repoList" :key="repository.id">
+    <div class="repo-card py-2 px-3 mb-6 " v-for="repository in repoList" :key="repository.id">
       <div class="repo-toprow mb-1">
         <div class="repo-name overflow-hidden">
           <a :href="repository.html_url" target="_blank" rel="noopener" class="text-blue-500">
