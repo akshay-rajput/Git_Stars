@@ -8,7 +8,7 @@
           <path :fill=topic.color :d=topic.icon />
         </svg>
         <!-- <span :class="topic.icon"></span> -->
-        <h5 class="cursor-pointer" @click="select_topic(topic)">{{topic.name}}</h5>
+        <h5 class="topic-card-name cursor-pointer" @click="select_topic(topic)">{{topic.name}}</h5>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
