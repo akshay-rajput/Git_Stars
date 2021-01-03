@@ -8,26 +8,28 @@
     --card-background: #{$light};
     --text-color: #{$dark};
     --gray:#{$gray};
+    --graydark:#{$graydark};
     --link-color: #{$theme};
+    --link-hover-color: #{$accent};
     --button-color: #{$theme};
 }
 
 // darktheme
 .darktheme{
-    --page-background: #{ $dark };
+    --page-background: #{$dark};
     --nav-background: #{$black};
     --footer-background: #{$black};
     --card-background: #{$darkcard};
     --text-color: #{$light};
     --gray:#{$gray};
+    --graydark:#{$graydark};
     --link-color: #{$accent};
+    --link-hover-color: #{$theme};
     --button-color: #{$theme};
 }
 
 // theme related styles
 #app{
-    // color: rgba(255,255,255,0.65);
-    // background-color: #24292e;
     background-image: url(https://desktop.github.com/images/star-bg.svg);
     // background-repeat: repeat-x;
     // background-position: center 0, 0 0, 0 0;
@@ -43,7 +45,7 @@
     a{
         color: var(--link-color);
         &:hover{
-            color: var(--accent);
+            color: var(--link-hover-color);
         }
     }
     .repolist-heading{
@@ -67,13 +69,20 @@
         background: var(--page-background);
         border: 1px solid var(--gray);
         transition: all ease-in 0.75s;
+        
+        .topic-card-name{
+            color: var(--link-color);    
+            &:hover{
+                color: var(--link-hover-color);
+            }
+        }
     }
     .topic-tag{
         background: var(--card-background);
         color: var(--link-color);
 
         &:hover{
-            color: var(--text-color);
+            color: var(--link-hover-color);
         }
     }
     .swiper-pagination-progressbar-fill{
@@ -109,6 +118,7 @@ html{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
 }
 
 // fade text
@@ -131,16 +141,57 @@ html{
     // transition: background ease 0.75s;
 }
 
+.loadingRepos{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    background: rgba(#000000, 0.75);
+    z-index: 15;
+
+    &.loading-icon{
+        // position: absolute;
+        // left: 45%;
+        text-align: center;
+        padding-top: 4rem;
+
+        span{
+            font-size: 3rem;
+            color: var(--gray);
+        }
+    }
+}
+.highlight-topic-name{
+    border-bottom: 1px dashed var(--link-hover-color);
+}
 // buttons
 .github-icon-hollow{
     fill: none !important;
     stroke: currentColor;
 }
+.btn-display-cards, .btn-display-list{
+    color: var(--graydark);
+}
 .btn-toggled{
     border-radius: 4px;
-    background: rgba($color: #000000, $alpha: .35);
-    color: #aaa;
+    background: rgba($color: var(--link-hover-color), $alpha: .35);
     &:focus{
-        outline-color: teal;
+        outline-color: var(--link-hover-color);
     }
+    span{
+        color: var(--link-color);
+    }
+}
+.btn-backToTop{
+    background-color: var(--graydark);
+    padding: 2px 8px;
+    border-radius: 50%;
+    color: black;
+    position: fixed;
+    right: 10px;
+    bottom: 2rem;
+    font-size: 1rem;
 }
