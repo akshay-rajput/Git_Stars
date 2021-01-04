@@ -5,7 +5,7 @@
                 <small class="text-xs text-gray-500">Reach out</small>
                 <ul class="flex items-baseline justify-center">
                     <li class="">
-                        <a href="https://github.com/root-0" class="footer-link hint--top" target="_blank" rel="noopener" aria-label="My Github Profile">
+                        <a href="https://github.com/akshay-rajput" class="footer-link hint--top" target="_blank" rel="noopener" aria-label="My Github Profile">
                             <span class="fab fa-github"></span>
                         </a>
                     </li>
@@ -39,7 +39,7 @@
 
 <script>
 // import Octicon, { Octicons } from 'octicons-vue'
-// <a class="btn-app btn-github-star" href="https://github.com/root-0/Git_Stars" target="_blank" rel="noopener" aria-label="Star root-0/Git_Stars on GitHub">
+// <a class="btn-app btn-github-star" href="https://github.com/akshay-rajput/Git_Stars" target="_blank" rel="noopener" aria-label="Star root-0/Git_Stars on GitHub">
 //     <octicon :icon="octicons.repoForked" :scale="1" className="" ></octicon> 
 //     <small class="pl-1">Github</small>
 // </a>
