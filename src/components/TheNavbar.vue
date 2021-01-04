@@ -9,7 +9,7 @@
                     <span class="fa fa-code-branch"></span> Fork
                 </a>
                 <a href="javascript:void(0);" @click="darkmode=!darkmode" class="hint--bottom" aria-label="Change Theme" title="toggle theme">
-                    <span :class="!darkmode ? 'fa fa-sun': 'fa fa-moon'"></span>
+                    <span :class="!darkmode ? 'fa fa-moon': 'fa fa-sun'"></span>
                 </a>
             </div>
         </div>
@@ -20,7 +20,7 @@
 export default {
     data(){
         return{
-            darkmode: false
+            darkmode: true
         }
     },
     watch: {
